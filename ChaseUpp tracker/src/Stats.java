@@ -59,7 +59,12 @@ public class Stats {
 
         // Print grades
         for (Stat stat : statsList) {
-            System.out.printf("%-10.1f", stat.getGrade());
+            System.out.print("___________");
+        }
+        System.out.println("");
+        System.out.print("  ");//adjust
+        for (Stat stat : statsList) {
+            System.out.printf("%-11.1f", stat.getGrade());
         }
         System.out.println("  Objective grade: " + calculateAverage(true));
         System.out.println();
@@ -76,7 +81,11 @@ public class Stats {
 
         // Print stat names
         for (Stat stat : statsList) {
-            System.out.printf("%-10s", stat.getName());
+            System.out.printf("%-11s", stat.getName());
+        }
+        System.out.println();
+        for (Stat stat : statsList) {
+            System.out.print("___________");
         }
         System.out.println();
     }

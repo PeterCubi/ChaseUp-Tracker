@@ -15,27 +15,22 @@ public class Main {
                 "0. Salir a comerse el mundo");
 
         System.out.println(LocalDate.now().toString());*/
-
-
         Scanner scanner = new Scanner(System.in);
-        Stats stats = new Stats();
+        Objectives objectives = new Objectives();
 
-        stats.addStat(new Stat("Strength", "Physical power", 9.5, true));
-        stats.addStat(new Stat("Smarts", "Intelligence", 9, true));
-        stats.addStat(new Stat("Discipline", "Self-control", 9.2, true ));
-        stats.addStat(new Stat("Charisma", "Charm", 7.1, false));
-        stats.addStat(new Stat("Wealth", "Richness", 5, true));
+        objectives.setObjective("School", 50);
+        objectives.setObjective("Training", 80);
+        objectives.setObjective("Project", 25);
 
-        stats.printStats();
+        objectives.printObjectives();
 
-        stats.addStatFromKeyboard(scanner, "Adding new stat");
-
-        stats.printStats();
-        // Uncomment to test keyboard input:
-        // stats.addStatFromKeyboard(scanner, "Add a new stat:");
-        // stats.printStats();
-        // stats.deleteStatFromKeyboard(scanner, "Delete a stat:");
-        // stats.printStats();
+        // Uncomment to test interaction:
+         objectives.setObjectiveFromKeyboard(scanner, "Add a new objective:");
+         objectives.printObjectives();
+         objectives.deleteObjectiveFromKeyboard(scanner, "Delete an objective:");
+         objectives.printObjectives();
+         objectives.evaluateObjectiveFromKeyboard(scanner, "Evaluate objective");
+         objectives.printObjectives();
     }
 
 
