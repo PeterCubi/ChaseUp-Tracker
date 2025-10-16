@@ -1,0 +1,35 @@
+INTERFACE Command
+    FUNC getName() -> STRING         // e.g. "prod add", "ticket print", "help", "exit"
+    FUNC getDescription() -> STRING  // short description
+    FUNC execute(args: LIST)         // logic of the command
+
+CLASS CommandRegistry
+    commands : MAP <STRING, Command>
+
+    FUNC register(command)
+        commands[command.getName()] = command
+
+    FUNC get(name) -> Command
+        return commands[name]
+
+    FUNC getAll() -> LIST<Command>
+        return all values of commands
+
+CLASS Terminal
+    registry : CommandRegistry
+
+    FUNC start()
+        LOOP FOREVER
+            input = readLine()
+            name, args = parseInput(input)  // first part is command name, rest are args
+            command = registry.get(name)
+            IF command != NULL THEN
+                command.execute(args)
+            ELSE
+                print("Unknown command. Type 'help'")
+
+----------------------------------------
+LIST OF COMMANDS
+----------------------------------------
+Los comandos para implementar son los siguientes:
+•......
