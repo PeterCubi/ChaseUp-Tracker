@@ -2,11 +2,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Objectives {
+public class ObjectivesBox {
 
     private HashMap<String, Integer> objectives;
 
-    public Objectives() {
+    public ObjectivesBox() {
         objectives = new HashMap<>();
     }
 

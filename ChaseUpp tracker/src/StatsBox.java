@@ -1,12 +1,11 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Stats {
+public class StatsBox {
 
     private ArrayList<Stat> statsList;
 
-    public Stats() {
+    public StatsBox() {
         statsList = new ArrayList<>();
     }
 

@@ -16,21 +16,16 @@ public class Main {
 
         System.out.println(LocalDate.now().toString());*/
         Scanner scanner = new Scanner(System.in);
-        Objectives objectives = new Objectives();
+        TemporalThoughts myThoughts = new TemporalThoughts();
 
-        objectives.setObjective("School", 50);
-        objectives.setObjective("Training", 80);
-        objectives.setObjective("Project", 25);
+        myThoughts.newThought("Morning idea", "Maybe I should start journaling again.");
+        myThoughts.newThought("Random", "Coffee tastes better when it rains.");
+        myThoughts.printThoughts();
 
-        objectives.printObjectives();
-
-        // Uncomment to test interaction:
-         objectives.setObjectiveFromKeyboard(scanner, "Add a new objective:");
-         objectives.printObjectives();
-         objectives.deleteObjectiveFromKeyboard(scanner, "Delete an objective:");
-         objectives.printObjectives();
-         objectives.evaluateObjectiveFromKeyboard(scanner, "Evaluate objective");
-         objectives.printObjectives();
+        // Uncomment to test interactions
+         myThoughts.newThoughtFromKeyboard(scanner, "📝 Add a new thought:");
+         myThoughts.deleteThoughtFromKeyboard(scanner, "🗑️ Delete a thought:");
+         myThoughts.printThoughts();
     }
 
 
