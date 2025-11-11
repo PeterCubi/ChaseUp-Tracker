@@ -28,5 +28,5 @@ public class Main {
          myThoughts.printThoughts();
     }
 
-
-    }
+// esto es para practicar merges
+}
